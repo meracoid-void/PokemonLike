@@ -41,6 +41,8 @@ public class BattleDialogBox : MonoBehaviour
             dialogText.text += letter;
             yield return new WaitForSeconds(1f/lettersPerSecond);
         }
+
+        yield return new WaitForSeconds(1f);
     }
 
     public void EnableDialogText(bool enabled)
@@ -87,7 +89,7 @@ public class BattleDialogBox : MonoBehaviour
             }
         }
 
-        ppText.text = $"PP {move.PP}/{move.Base}";
+        ppText.text = $"PP {move.PP}/{move.Base.PP}";
         typeText.text = move.Base.Type.ToString();
     }
 
